@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<a>Hover</a>
+
+<input type="checkbox"/>
+<input type="checkbox">
+
+<div>
+    <div>Hello</div>
+
+</div>
+
+<ul>
+    <li>A</li>
+    <li>B</li>
+    <li>C</li>
+</ul>
+<style>
+    ul li:first-child {
+        color: red;
+    }
+
+    ul li:last-child {
+        color: blue;
+    }
+
+    ul li:nth-child(2) {
+        color: green;
+    }
+
+    a:hover {
+        color: red;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    input[type="checkbox"]:checked {
+        border: 1px solid red;
+        background: red;
+        width: 50px;
+        height: 50px;
+    }
+
+    div:after {
+        content: "Hi";
+        color: red;
+    }
+
+    div:before {
+        content: "Thank you";
+        color: blue;
+    }
+</style>
+</body>
+</html>
