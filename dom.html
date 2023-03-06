@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+ <div id="hello">Hello</div>
+  <button onclick="changeText()">Change Text</button>
+
+  <script>
+      function changeText() {
+          //2 cách -> truy cập trực tiếp thông qua đối tươnợng document
+          //-> truy câp gián tiếp, tìm ddoosi tươnng kế cận dựa theo đối tượng ã biêết
+          const helloNode = document.getElementById("hello");
+          helloNode.innerText = "Hi Java 31";
+      }
+  </script>
+</body>
+</html>

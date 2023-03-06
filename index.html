@@ -8,95 +8,131 @@
     <title>Document</title>
 </head>
 <body>
-
 <script>
-    //alert("Hello World");
-    //let age = 10; //global -> toàn cuc, function scope
-    let name = "John";//ES6 JavaScript 2017 -> block scope
-    //scope - phạm vi truy cập của 1 biến: global scope, function scope, block scope, lexical scope
-    ///const PI = 3.14;
-    //PI = 3.145;
-
-    //cách đặt tên biến
-    //PascalCase-> MyName, MyAge, MyAddress
-    //camelCase-> myName, myAge, myAddress
-    //under_score -> my_name, my_age, my_address
-
-    let a = 50;
-    let b = 20;
-    console.log(a + b);
-    console.log(a - b);
-    console.log(a * b);
-    console.log(a / b);
-    console.log(a % b);
-
-
-    //toán tử gán + toán học
-    a += 50; // a = a+50;
-    b -= 10;//b = b-10;
-
-    console.log(++a);//101
-    console.log(a);//101
-    //console.log(++a);
-
-    //String
-    //Number
-    //Boolean
-    //Null
-    //Undefined
-    //Symbol
-
-    /*console.log(1 == "1");//true
-    console.log(1 === "1");//false
-    console.log(10 > 20);//false
-    console.log(10 < 20);//true
-    console.log(10 <= 10);//true
-    console.log(20 >= 20);//true
-    console.log(20 != 20);//false
-
-    console.log( (10==10) && (10==20) );//false
-    console.log( (10==10) && (20==20) );//true
-    console.log((10 == 10) || (10 == 20));//true
-
-    console.log(!true);//false
-    console.log(!false);//true*/
-
-    let money = 200000;
-    if (money <= 70000) {
-        console.log("Đi ăn phở")
-    } else {
-        console.log("Đi ăn cơm tấm");
+    /*function sayHello() {
+        alert("Hello World");
+        alert("Welcome To JavaScript");
     }
 
+    sayHello();//-->invoke function
+    sayHello();*/
 
-    let age = 10;
-    if (age <= 12) {
-        console.log("Thiếu nhi");
-    } else if (age > 12 && age <= 16) {
-        console.log("Thiếu niên");
-    } else if (age > 16 && age <= 31) {
-        console.log("Thanh niên");
-    } else if (age > 31) {
-        console.log("Trung niên");
+    //hàm có tham số
+    /*function sum(a, b) {
+        const c= a+b;
+        alert(c);
+    }*/
+
+    /*function sum(a, b) {
+        const c = a + b;
+        return c;
+    }*/
+
+    /*sum(10, 20);
+    sum(30, 50);
+    sum(40, 60);*/
+    /*const result = sum(10, 20);
+    alert(result);
+    console.log(result);*/
+
+    //hàm nặc danh (anonymous function)
+    //first citizen function
+    //hàm có thể sử dụng như giá trị, nó có thể được gán vào biến, được sử dụng làm tham trị
+    /*const sum = function (a,b) {
+        return a+b;
+    }
+    console.log(sum(20,30));
+    sum(10, 20);
+
+    const sum2 = sum;
+    sum2(30, 20);*/
+
+    //cách thứ 3 ES6 - ECMASCRIPT 2017
+    //Context Javascript
+    //hàm mũi tên
+    /*const sum3 = (a,b) => {
+        return a+b;
     }
 
-    //đẹp
-    switch (age) {
-        case 12:
-            console.log("Thiếu nhi");
-            break;
+    const sum4 = new Function("a", "b", "return a+b");*/
 
-        case 16:
-            console.log("Thiêếu niên");
-            break;
+    //callback function -> hàm gọi lại (hàm truyền vào hàm khác)
+    //higher order function
 
-        case 31:
-            console.log("Thanh niên");
-            break;
-
-        default:
-            console.log("Default Không vào đâu cả");
+    /*function a(func) {
+        console.log("hihi");
+        func();
     }
+
+    a(function () {
+        console.log("Haha");
+    });
+
+    a(function () {
+        console.log("Ahihi");
+    });
+
+    a(function () {
+        console.log("Huhu");
+    });
+
+    function sum(a, b, func) {
+        const c = a + b;
+        func(c);
+    }
+
+    sum(20, 30, function (c) {
+        console.log(c);
+        c += 10;
+        console.log(c);
+    });*/
+
+    let seaFoods = [
+        "Lobster",
+        "King Crab",
+        "Cá Mòi",
+        "Tuna",
+        "Salmon"
+    ];
+    const forestFood = new Array("Mushroom", "Rice", "Banana", "Apple", "Orange");
+
+    console.log(seaFoods[0]);
+    console.log(seaFoods[4]);
+
+    seaFoods.push("Cá Hồi Hoang");
+    seaFoods.push("Cá Hồi Nuôi");
+
+
+    seaFoods = seaFoods.concat(["Cá Hôi đi bụi", "Cá hồi bỏ nhà ra đi"]);
+    console.log(seaFoods);
+
+    seaFoods.pop();
+    console.log(seaFoods);
+
+    //shift
+    //unshift
+    //map
+    //filter
+    //reduce
+    /*
+        for (let i = 0; i < seaFoods.length; i++) {
+            console.log(seaFoods[i]);
+        }
+    */
+    /*
+        seaFoods.forEach(function (food,index){
+            console.log(food);
+            console.log(index);
+        })
+
+
+        function forEach(arr, func) {
+            for (let i = 0; i < arr.length; i++) {
+                func(arr[i], i);
+            }
+        }*/
+
+
 </script>
 </body>
 </html>

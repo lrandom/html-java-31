@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>HELLO</p>
+    <p>HELLO</p>
+    <p>HELLO</p>
+    <p>HELLO</p>
+
+   <button onclick="changeText()">
+       Change Text
+   </button>
+
+  <script>
+      function changeText() {
+          const pNodes = document.querySelectorAll("p");
+          for (let i = 0; i < pNodes.length; i++) {
+              pNodes[i].innerText = "Hi Java 31";
+          }
+      }
+  </script>
+</body>
+</html>
