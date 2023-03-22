@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+            integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+</head>
+<body>
+<div>
+    <h5>Bus</h5>
+    <div class="wrapper">
+        <div class="section">
+            <input type="text" class="from"> <input type="text" class="to">
+            <button class="btn-plus">+</button>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    //code thuần
+    function addBus() {
+        const section = document.querySelector('.section');
+        const cloneSection = section.cloneNode(true);
+        const inputs = cloneSection.querySelectorAll('input');
+        inputs.forEach(input => {
+            input.value = '';
+        })
+        cloneSection.querySelector('button').innerText = '-';
+        cloneSection.querySelector('button').onclick = function (evt) {
+            evt.target.closest('.section').remove();
+        };
+        const wrapper = document.querySelector('.wrapper');
+        wrapper.appendChild(cloneSection);
+    }
+
+    //code jquery
+    $(document).ready(function () {
+        $('.btn-plus').click(function () {
+            $('.wrapper').append(
+                $('.section').prop('outerHTML').replaceAll('+', '-').replaceAll('btn-plus', 'btn-minus')
+            );
+            $('.btn-minus').one('click', function () {
+                $(this).parent('.section').remove()
+            });
+        });
+    });
+</script>
+</body>
+</html>
