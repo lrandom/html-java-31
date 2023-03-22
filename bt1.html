@@ -6,37 +6,91 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+            integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 </head>
 <body>
-<div class="parent">
-    <div class="child child-1"></div>
-    <div class="child child-2"></div>
-</div>
+<form onsubmit="return validate()">
+    <div>
+        <label for="full_name">FullName</label>
+        <input type="text" name="full_name" id="full_name"/>
+    </div>
 
+    <div>
+        <label for="address">Email</label>
+        <input type="text" name="address" id="address"/>
+    </div>
+
+    <div>
+        <label for="account">Account</label>
+        <input type="text" name="account" id="account" readonly/>
+    </div>
+
+    <button>Submit</button>
+</form>
+
+<script>
+
+    function validate() {
+        //js thuần
+        /*const fullNameNode = document.querySelector('#full_name');
+        const addressNode = document.querySelector('#address');
+        const accountNode = document.querySelector('#account');
+        if (!fullNameNode.value) {
+            alert('FullName is required');
+            return false;
+        }
+
+        if (!addressNode.value) {
+            alert('Address is required');
+            return false;
+        }
+        let regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (!addressNode.value.match(regex)) {
+            alert('Email is invalid');
+            return false;
+        }
+
+        const transformFullName = fullNameNode.value.replaceAll(" ", "");
+        accountNode.value = transformFullName.substring(transformFullName.length - 4) + '@' + addressNode.value.split('@')[1];
+
+        return false;*/
+
+        //jquery
+        const fullNameNode = $('#full_name');
+        const addressNode = $('#address');
+        const accountNode = $('#account');
+        if (!fullNameNode.val()) {
+            alert('FullName is required');
+            return false;
+        }
+
+        if (!addressNode.val()) {
+            alert('Address is required');
+            return false;
+        }
+
+        let regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (!addressNode.val().match(regex)) {
+            alert('Email is invalid');
+            return false;
+        }
+
+        const transformFullName = fullNameNode.val().replaceAll(" ", "");
+        accountNode.val(transformFullName.substring(transformFullName.length - 4) + '@' + addressNode.val().split('@')[1]);
+
+        return false;
+
+    }
+</script>
 <style>
-    .parent {
-        width: 500px;
-        height: 500px;
-        background: #C4C4C4;
-        position: relative;
+    form > div {
+        margin-top: 5px;
     }
 
-    .child {
-        position: absolute;
+    label {
         width: 100px;
-        height: 100px;
-    }
-
-    .child-1 {
-        left: 0;
-        top: 0;
-        background: #EB5757;
-    }
-
-    .child-2 {
-        right: 0;
-        bottom: 0;
-        background: #F2994A;
+        display: inline-block;
     }
 </style>
 </body>
